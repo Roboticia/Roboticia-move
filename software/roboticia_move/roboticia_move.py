@@ -1,31 +1,16 @@
 from pypot.creatures import AbstractPoppyCreature
 
-from .sensor import RPLidarA2, VoiceRecognition
 from subprocess import call
 
-def speak(phrase):
-    call(["roboticia-speak.sh", phrase])
-
-class RoboticiaDrive(AbstractPoppyCreature):
+class RoboticiaMove(AbstractPoppyCreature):
     @classmethod
     def setup(cls, robot):
         for m in robot.motors:
             m.goto_behavior = 'dummy'
             m.moving_speed = 0
             m.pid = (6.0,10.0,0.0)
-            
-        sensor1 = RPLidarA2('lidar', 'normal')
-        robot._sensors.append(sensor1)
-        setattr(robot, sensor1.name, sensor1)
+           
         
-        sensor2 = VoiceRecognition('speech')
-        robot._sensors.append(sensor2)
-        setattr(robot, sensor2.name, sensor2)
-        
-        robot.speak = speak
-        
-        
-
         if robot.simulated:
             cls.vrep_hack(robot)
 
