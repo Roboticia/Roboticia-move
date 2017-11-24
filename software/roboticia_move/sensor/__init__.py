@@ -1,5 +1,5 @@
 try:
-    from .lidar_a2 import RPLidarA2
-    from .voice_recognition import VoiceRecognition
+    from .srf02 import SRF02
+    
 except ImportError:
     pass

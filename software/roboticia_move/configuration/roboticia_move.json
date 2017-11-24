@@ -1,42 +1,28 @@
 {
   "controllers": {
     "my_dxl_controller": {
-      "sync_read": true,
+      "sync_read": false,
       "protocol": 2,
       "attached_motors": [
-        "wheel",
-        "arm"
+        "arm",
+        "wheel"
       ],
       "port": "auto",
-	  "syncloop": "RoboticiaDxlController"
+          "syncloop": "RoboticiaDxlController"
     }
   },
   "motorgroups": {
-    "wheel": [
-      "m4",
-	  "m5"
-    ],
     "arm": [
       "m1",
-	  "m2",
-	  "m3"
+      "m2",
+      "m3"
+    ],
+    "wheel": [
+      "m4",
+      "m5"
     ]
   },
   "motors": {
-    "m4": {
-      "offset": 0.0,
-      "type": "XL-320",
-      "id": 4,
-      "wheel_mode": true,
-      "orientation": "indirect"
-    },
-    "m5": {
-      "offset": 0.0,
-      "type": "XL-320",
-      "id": 2,
-      "wheel_mode": true,
-      "orientation": "direct"
-    },
     "m1": {
       "offset": 0.0,
       "type": "XL-320",
@@ -57,7 +43,7 @@
       ],
       "orientation": "direct"
     },
-    "m3": {
+	"m3": {
       "offset": -90.0,
       "type": "XL-320",
       "id": 3,
@@ -66,6 +52,21 @@
         150.0
       ],
       "orientation": "indirect"
+    },
+    "m4": {
+      "offset": 0.0,
+      "type": "XL-320",
+      "id": 4,
+      "wheel_mode": true,
+      "orientation": "indirect"
+    },
+    "m5": {
+      "offset": 0.0,
+      "type": "XL-320",
+      "id": 5,
+      "wheel_mode": true,
+      "orientation": "direct"
     }
-  },
+  }
 }
+
